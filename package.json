@@ -1,0 +1,15 @@
+{
+  "name": "template-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --prefix packages/client && npm run build --prefix packages/server",
+    "dev": "concurrently \"npm run dev --prefix packages/server\" \"npm run dev --prefix packages/client\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
